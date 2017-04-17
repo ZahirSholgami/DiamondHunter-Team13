@@ -126,8 +126,24 @@ public class Player extends Entity {
 			}
 		}
 	}
-	
+	// Player animation enhancements -- Wezley
 	public void update() {
+
+		if(hasAxe && hasBoat)
+		{
+			downSprites = Content.PLAYER[12];
+			leftSprites = Content.PLAYER[13];
+			rightSprites = Content.PLAYER[14];
+			upSprites = Content.PLAYER[15];
+		}
+		else if(hasAxe)
+		{
+			downSprites = Content.PLAYER[8];
+			leftSprites = Content.PLAYER[9];
+			rightSprites = Content.PLAYER[10];
+			upSprites = Content.PLAYER[11];
+		}
+		
 		
 		ticks++;
 		
