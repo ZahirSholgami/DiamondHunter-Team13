@@ -1,47 +1,42 @@
 package com.neet.DiamondHunter.Entity;
 
+import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 public class AnimationTest {
+	Animation ani = new Animation();
 
 	@Test
-	public void testAnimation() throws Exception {
-		throw new RuntimeException("not yet implemented");
+	public void testSetDelay()
+	{
+		ani.setDelay(10);
+		assertEquals(10, ani.getDelay());
+		ani.setDelay(20);
+		assertEquals(20, ani.getDelay());
+		ani.setDelay(12312321);
+		assertEquals(12312321, ani.getDelay());
 	}
 
 	@Test
-	public void testSetFrames() throws Exception {
-		throw new RuntimeException("not yet implemented");
+	public void testSetFrame() 
+	{
+		ani.setFrame(1);
+		assertEquals(1, ani.getFrame());
+		ani.setFrame(123);
+		assertEquals(123, ani.getFrame());
 	}
 
 	@Test
-	public void testSetDelay() throws Exception {
-		throw new RuntimeException("not yet implemented");
+	public void testGetFrame()
+	{
+		ani.setFrame(123);
+		assertEquals(123, ani.getFrame());
 	}
 
 	@Test
-	public void testSetFrame() throws Exception {
-		throw new RuntimeException("not yet implemented");
+	public void testGetCount()  
+	{
+		assertEquals(0, ani.getCount());
 	}
-
-	@Test
-	public void testGetFrame() throws Exception {
-		throw new RuntimeException("not yet implemented");
-	}
-
-	@Test
-	public void testGetCount() throws Exception {
-		throw new RuntimeException("not yet implemented");
-	}
-
-	@Test
-	public void testHasPlayedOnce() throws Exception {
-		throw new RuntimeException("not yet implemented");
-	}
-
-	@Test
-	public void testHasPlayed() throws Exception {
-		throw new RuntimeException("not yet implemented");
-	}
-
 }

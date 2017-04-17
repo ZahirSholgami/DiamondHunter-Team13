@@ -45,12 +45,21 @@ public class Keys {
 		}
 	}
 	
+	// Make sure the user doesn't request a key that doesnt exist -- Wezley
 	public static boolean isPressed(int i) {
-		return keyState[i] && !prevKeyState[i];
+		if(i < keyState.length)
+		{
+			return keyState[i] && !prevKeyState[i];
+		}
+		return false;
 	}
-	
+	// Fixed error here when you attempt to access a key that doesn texist within keyState -- Wezley
 	public static boolean isDown(int i) {
-		return keyState[i];
+		if(i < keyState.length)
+		{
+			return keyState[i];
+		}
+		return false;
 	}
 	
 	public static boolean anyKeyDown() {
