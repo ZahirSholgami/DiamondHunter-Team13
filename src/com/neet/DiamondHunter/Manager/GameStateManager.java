@@ -44,29 +44,36 @@ public class GameStateManager {
 	}
 	
 	public void setState(int i) {
-		previousState = currentState;
-		unloadState(previousState);
-		currentState = i;
-		if(i == INTRO) {
-			gameStates[i] = new IntroState(this);
-			gameStates[i].init();
-		}
-		else if(i == MENU) {
-			gameStates[i] = new MenuState(this);
-			gameStates[i].init();
-		}
-		else if(i == PLAY) {
-			gameStates[i] = new PlayState(this);
-			gameStates[i].init();
-		}
-		else if(i == GAMEOVER) {
-			gameStates[i] = new GameOverState(this);
-			gameStates[i].init();
+		if(i < NUM_STATES) 
+		{
+			previousState = currentState;
+			unloadState(previousState);
+			currentState = i;
+			if(i == INTRO) {
+				gameStates[i] = new IntroState(this);
+				gameStates[i].init();
+			}
+			else if(i == MENU) {
+				gameStates[i] = new MenuState(this);
+				gameStates[i].init();
+			}
+			else if(i == PLAY) {
+				gameStates[i] = new PlayState(this);
+				gameStates[i].init();
+			}
+			else if(i == GAMEOVER) {
+				gameStates[i] = new GameOverState(this);
+				gameStates[i].init();
+			}
 		}
 	}
 	
+	/*
+	 * If you try to give `setState` an invalid state this will return an error -- Wezley
+	 */
 	public void unloadState(int i) {
-		gameStates[i] = null;
+		if(i < NUM_STATES)
+			gameStates[i] = null;
 	}
 	
 	public void setPaused(boolean b) {
@@ -91,4 +98,6 @@ public class GameStateManager {
 		}
 	}
 	
+	public int getState() { return currentState; }
+	public boolean isPaused() { return paused; }
 }
