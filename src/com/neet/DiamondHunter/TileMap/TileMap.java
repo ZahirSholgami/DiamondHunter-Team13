@@ -93,7 +93,7 @@ public class TileMap {
 	}
 	
 	public void loadMap(String s) {
-		// Fixed Bug that FindBug found that readLine didn't check for Null --Maguire
+		// Fixed Bug that FindBug found that readLine didn't check for Null -- Maguire
 		try {
 			
 			InputStream in = getClass().getResourceAsStream(s);
