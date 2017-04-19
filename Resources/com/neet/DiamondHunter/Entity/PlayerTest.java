@@ -43,4 +43,15 @@ public class PlayerTest
 		assertEquals(true, testPlayer.hasAxe());
 	}
 	
+	//Maguire Test
+	@Test
+	public void testSetTotalDiamonds()
+	{
+		testPlayer.setTotalDiamonds(1);
+		assertEquals(1,testPlayer.getTotalDiamonds());
+		testPlayer.setTotalDiamonds(0);
+		assertEquals(0,testPlayer.getTotalDiamonds());
+		testPlayer.setTotalDiamonds(123423);
+		assertEquals(123423,testPlayer.getTotalDiamonds());
+	}
 }
