@@ -376,8 +376,9 @@ public class PlayState extends GameState {
 			}
 		}
 		if(eventTick > 33) {
+			//ZAC: -2 to remove the time added by the music and transition to the end
+			Data.setTime(player.getTicks() - 2);
 			if(!JukeBox.isPlaying("finish")) {
-				Data.setTime(player.getTicks());
 				gsm.setState(GameStateManager.GAMEOVER);
 			}
 		}
