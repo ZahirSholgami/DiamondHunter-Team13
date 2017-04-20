@@ -53,7 +53,7 @@ public class Keys {
 		}
 		return false;
 	}
-	// Fixed error here when you attempt to access a key that doesn texist within keyState -- Wezley & Alonna
+	// Fixed error here when you attempt to access a key that doesn't exist within keyState -- Wezley & Alonna
 	public static boolean isDown(int i) {
 		if(i < keyState.length)
 		{

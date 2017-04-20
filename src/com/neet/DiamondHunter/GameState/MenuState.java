@@ -18,6 +18,7 @@ public class MenuState extends GameState {
 	private int currentOption = 0;
 	private String[] options = {
 		"START",
+		"INSTRUCTIONS", //ZAC: Added
 		"QUIT"
 	};
 	
@@ -40,11 +41,15 @@ public class MenuState extends GameState {
 		
 		g.drawImage(bg, 0, 0, null);
 		
+		//ZAC: Added string and location for instructions
 		Content.drawString(g, options[0], 44, 90);
-		Content.drawString(g, options[1], 48, 100);
+		Content.drawString(g, options[1], 16, 102);
+		Content.drawString(g, options[2], 48, 114);
 		
+		//ZAC: Added option for instructions 
 		if(currentOption == 0) g.drawImage(diamond, 25, 86, null);
-		else if(currentOption == 1) g.drawImage(diamond, 25, 96, null);
+		else if(currentOption == 1) g.drawImage(diamond, 0, 96, null);
+		else if(currentOption == 2) g.drawImage(diamond, 30, 110, null);
 		
 	}
 	
@@ -63,11 +68,16 @@ public class MenuState extends GameState {
 		}
 	}
 	
+	//ZAC: Added instructions option.
 	private void selectOption() {
 		if(currentOption == 0) {
 			gsm.setState(GameStateManager.PLAY);
 		}
 		if(currentOption == 1) {
+			gsm.setState(GameStateManager.INSTRUCTIONS);
+		}
+		if(currentOption == 2)
+		{
 			System.exit(0);
 		}
 	}
