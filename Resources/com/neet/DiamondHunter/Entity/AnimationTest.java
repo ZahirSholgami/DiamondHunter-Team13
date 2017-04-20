@@ -39,4 +39,16 @@ public class AnimationTest {
 	{
 		assertEquals(0, ani.getCount());
 	}
+	
+	//Maguire Test
+	@Test
+	public void testSetNumFrames()
+	{
+		ani.setNumFrames(3);
+		assertEquals(3,ani.getFrames());
+		ani.setNumFrames(0);
+		assertEquals(0,ani.getFrames());
+		ani.setNumFrames(2341241);
+		assertEquals(2341241,ani.getFrames());
+	}
 }
