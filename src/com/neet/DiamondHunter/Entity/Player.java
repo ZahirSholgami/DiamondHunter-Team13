@@ -136,7 +136,7 @@ public class Player extends Entity {
 			rightSprites = Content.PLAYER[14];
 			upSprites = Content.PLAYER[15];
 		}
-		else if(hasAxe)
+		else if(hasAxe) // T
 		{
 			downSprites = Content.PLAYER[8];
 			leftSprites = Content.PLAYER[9];
