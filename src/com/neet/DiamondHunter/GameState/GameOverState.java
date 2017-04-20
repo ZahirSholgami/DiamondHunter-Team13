@@ -11,6 +11,8 @@ package com.neet.DiamondHunter.GameState;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import com.neet.DiamondHunter.Main.GamePanel;
 import com.neet.DiamondHunter.Manager.Content;
@@ -37,9 +39,12 @@ public class GameOverState extends GameState {
 		else if(ticks < 5400) rank = 2;
 		else if(ticks < 7200) rank = 3;
 		else rank = 4;
+		
 	}
 	
-	public void update() {}
+	public void update() {
+		handleInput();
+	}
 	
 	public void draw(Graphics2D g) {
 		
@@ -69,10 +74,13 @@ public class GameOverState extends GameState {
 		
 	}
 	
-	public void handleInput() {
-		if(Keys.isPressed(Keys.ENTER)) {
+	public void handleInput() 
+	{
+		if(Keys.anyKeyPress())
+		{
 			gsm.setState(GameStateManager.MENU);
 			JukeBox.play("collect");
+			System.out.println("Game ended!");
 		}
 	}
 	
