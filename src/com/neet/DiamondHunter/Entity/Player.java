@@ -41,6 +41,7 @@ public class Player extends Entity {
 	private boolean hasBoat;
 	private boolean hasAxe;
 	private boolean onWater;
+	private boolean deadTree;
 	private long ticks;
 	
 	public Player(TileMap tm) {
@@ -108,6 +109,7 @@ public class Player extends Entity {
 	// of the Player will be chopped down.
 	public void setAction() {
 		if(hasAxe) {
+			
 			if(currentAnimation == UP && tileMap.getIndex(rowTile - 1, colTile) == 21) {
 				tileMap.setTile(rowTile - 1, colTile, 1);
 				JukeBox.play("tilechange");
@@ -124,8 +126,11 @@ public class Player extends Entity {
 				tileMap.setTile(rowTile, colTile + 1, 1);
 				JukeBox.play("tilechange");
 			}
-		}
+		
 	}
+		}
+	
+			
 	// Player animation enhancements -- Wezley
 	public void update() {
 
