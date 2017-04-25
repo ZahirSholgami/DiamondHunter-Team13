@@ -41,7 +41,6 @@ public class Player extends Entity {
 	private boolean hasBoat;
 	private boolean hasAxe;
 	private boolean onWater;
-	private boolean deadTree;
 	private long ticks;
 	
 	public Player(TileMap tm) {
@@ -127,8 +126,8 @@ public class Player extends Entity {
 				JukeBox.play("tilechange");
 			}
 		
-	}
 		}
+	}
 	
 			
 	// Player animation enhancements -- Wezley
