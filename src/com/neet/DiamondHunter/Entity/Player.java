@@ -106,8 +106,10 @@ public class Player extends Entity {
 	// Keyboard input.
 	// If Player has axe, dead trees in front
 	// of the Player will be chopped down.
+	//Enhanced so that player can walk into dead tree and chop it down -Maguire
 	public void setAction() {
 		if(hasAxe) {
+			
 			if(currentAnimation == UP && tileMap.getIndex(rowTile - 1, colTile) == 21) {
 				tileMap.setTile(rowTile - 1, colTile, 1);
 				JukeBox.play("tilechange");
@@ -124,8 +126,11 @@ public class Player extends Entity {
 				tileMap.setTile(rowTile, colTile + 1, 1);
 				JukeBox.play("tilechange");
 			}
+		
 		}
 	}
+	
+			
 	// Player animation enhancements -- Wezley
 	public void update() {
 
