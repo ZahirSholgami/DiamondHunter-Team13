@@ -106,6 +106,7 @@ public class Player extends Entity {
 	// Keyboard input.
 	// If Player has axe, dead trees in front
 	// of the Player will be chopped down.
+	//Enhanced so that player can walk into dead tree and chop it down -Maguire
 	public void setAction() {
 		if(hasAxe) {
 			
